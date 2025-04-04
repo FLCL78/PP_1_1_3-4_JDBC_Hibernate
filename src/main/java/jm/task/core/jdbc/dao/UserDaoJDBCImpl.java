@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    public UserDaoJDBCImpl() {
 
+    public UserDaoJDBCImpl() {
     }
 
     public void createUsersTable() {
@@ -57,9 +57,12 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.setByte(3, age);
             preparedStatement.executeUpdate();
 
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
     public void removeUserById(long id) {
@@ -91,6 +94,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setName(resultSet.getString("name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setAge(resultSet.getByte("age"));
+                user.setId((long) userList.size() + 1);
                 userList.add(user);
             }
 
