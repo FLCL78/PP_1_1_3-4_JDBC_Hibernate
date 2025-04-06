@@ -40,7 +40,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public void dropUsersTable() {
 
         try(Session session = Util.getSessionFactory().openSession()) {
-            String sql = "TRUNCATE TABLE IF EXISTS Users";
+            String sql = "DROP TABLE IF EXISTS Users";
             Transaction transaction = session.beginTransaction();
 
             session.createNativeQuery(sql).executeUpdate();

@@ -53,7 +53,7 @@ public class Util {
                 setting.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
                 setting.put(Environment.SHOW_SQL, "true");
                 setting.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-                setting.put(Environment.HBM2DDL_AUTO, "update"); //???????????????
+                setting.put(Environment.HBM2DDL_AUTO, "");
 
                 configuration.setProperties(setting);
                 configuration.addAnnotatedClass(User.class);
